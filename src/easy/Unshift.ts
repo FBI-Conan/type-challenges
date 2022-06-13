@@ -18,7 +18,7 @@
 
 /* _____________ 你的代码 _____________ */
 
-type Unshift<T extends readonly any[], U> = [U, ...T];
+type Unshift<T extends any[], U> = [U, ...T];
 
 /* _____________ 测试用例 _____________ */
 import type { Equal, Expect } from "@type-challenges/utils";

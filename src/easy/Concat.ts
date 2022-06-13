@@ -19,7 +19,7 @@
 /* _____________ 你的代码 _____________ */
 // 元组支持展开运算符
 
-type Concat<T extends readonly any[], U extends readonly any[]> = [...T, ...U];
+type Concat<T extends any[], U extends any[]> = [...T, ...U];
 
 /* _____________ 测试用例 _____________ */
 import type { Equal, Expect } from "@type-challenges/utils";

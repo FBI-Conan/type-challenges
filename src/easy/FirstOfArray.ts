@@ -24,7 +24,7 @@
 
 /* _____________ 你的代码 _____________ */
 
-type First<T extends readonly any[]> = T extends [infer F, ...any[]]
+type First<T extends any[]> = T extends [infer F, ...any[]]
 	? F
 	: never;
 

@@ -19,7 +19,7 @@
 /* _____________ 你的代码 _____________ */
 // includes 的思想就是一个一个的遍历比较
 
-type Includes<T extends readonly any[], U> = T extends [infer F, ...infer R]
+type Includes<T extends any[], U> = T extends [infer F, ...infer R]
 	? Equal<F, U> extends true
 		? true
 		: Includes<R, U>
@@ -27,8 +27,6 @@ type Includes<T extends readonly any[], U> = T extends [infer F, ...infer R]
 
 /* _____________ 测试用例 _____________ */
 import type { Equal, Expect } from "@type-challenges/utils";
-
-// type Includes<T extends readonly any[], U> = ;
 
 type cases = [
 	Expect<

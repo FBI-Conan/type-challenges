@@ -23,13 +23,8 @@
 */
 
 /* _____________ 你的代码 _____________ */
-// 元组 readonly Type[] 或者 ReadonlyArray<Type>
 
 type Length<T extends ReadonlyArray<any>> = T["length"];
-
-type x = ["1", "2"];
-
-type y = x extends readonly number[] ? true : false;
 
 /* _____________ 测试用例 _____________ */
 import type { Equal, Expect } from "@type-challenges/utils";
