@@ -30,13 +30,11 @@ type ReOrg<T> = {
 	[P in keyof T]: T[P];
 };
 
-type Inter<T, K> = {
-	[Property in keyof T & K]?: T[Property];
-} & {
-	[Property in Exclude<keyof T, K>]: T[Property];
-};
+type Inter<T, K extends keyof T> = {
+	[Property in K]?: T[Property];
+} & Pick<T, Exclude<keyof T, K>>;
 
-type PartialByKeys<T, K = keyof T> = ReOrg<Inter<T, K>>;
+type PartialByKeys<T, K = keyof T> = ReOrg<Inter<T, keyof T & K>>;
 
 type X = PartialByKeys<User, "name">;
 
